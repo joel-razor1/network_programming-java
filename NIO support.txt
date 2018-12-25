@@ -1,0 +1,14 @@
+The java.io, java.nio and java.nio subpackages provide most of the Java support for IO processing.
+
+There are three key concepts used in the NIO package:
+
+1) Channel: This represents a stream of data between applications.
+2) Buffer: This works with a channel to process data.
+3) Selector: This is a technology that allows a single thread to handle multiple channels.
+
+There are 4 primary channels:
+
+1) FileChannel: This works with a file.
+2) DatagramChannel: This supports UDP communications.
+3) SocketChannel: This is used with a TCP client.
+4) ServerSocketChannel: This is used with a TCP server.
