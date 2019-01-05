@@ -1,7 +1,6 @@
-import java.io.DataOutputStream;
-import java.io.IOException;
-import java.net.Socket;
-import java.util.StringTokenizer;
+import java.io.*;
+import java.net.*;
+import java.util.*;
 
 public class ClientHandler implements Runnable {
     private final Socket socket;
@@ -18,7 +17,7 @@ public class ClientHandler implements Runnable {
         try (DataOutputStream out = new DataOutputStream(socket.getOutputStream());) {
             if (statusCode == 200) {
                 statusLine = "HTTP/1.0 200 OK" + "\r\n";
-                String contentlengthHeader = "Content-Length: " + responseString.length() + "\r\n";
+                String contentLengthHeader = "Content-Length: " + responseString.length() + "\r\n";
 
                 out.writeBytes(statusLine);
                 out.writeBytes(serverHeader);

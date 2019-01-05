@@ -1,15 +1,19 @@
+import java.io.*;
+import java.util.*;
+import java.net.*;
+
 public class Webserver {
-    public WebServer(){
+    public Webserver() {
         System.out.println("Webserver started");
-        try(ServerSocket serversocket=new ServerSocket(3000)){
-            while(true){
+        try (ServerSocket serversocket = new ServerSocket(3000)) {
+            while (true) {
                 System.out.println("Waiting for the client request");
-                Socket remote=serversocket.accept();
+                Socket remote = serversocket.accept();
                 System.out.println("Connection made");
                 new Thread(new ClientHandler(remote)).start();
 
             }
-        }catch(IOException ex){
+        } catch (IOException ex) {
             ex.printStackTrace();
         }
     }
