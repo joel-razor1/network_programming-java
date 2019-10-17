@@ -15,13 +15,10 @@ public class ClientJo1 {
             s4 = br.readLine();
             System.out.println("Server said: " + s4);
             System.out.println("Enter text");
-
         }
         System.out.println("Terminated");
         cs.close();
         dos.close();
         kb.close();
-
     }
-
 }
